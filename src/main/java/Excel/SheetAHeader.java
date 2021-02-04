@@ -1,12 +1,12 @@
 package Excel;
 
-
-public class SheetAHeader {
+public enum SheetAHeader {
     /** Header **/
-    totalRank(0, "순번/순위");
-    bookTitle(1, "상품명");
+    totalRank(0, "순번/순위"),
+    bookTitle(1, "상품명"),
+    releasedDate(2, "출간일");
 
-    /** Setting **/
+    /** Setting */
     private final int columnIndex;
     private final String columnName;
 
@@ -14,9 +14,13 @@ public class SheetAHeader {
         this.columnIndex = index;
         this.columnName = name;
     }
-
-    public int columnIndex() { return this.columnIndex();}
-    public String columnName() { return this.columnName();}
-    public SheetAHeader[] getHeader() { return SheetAHeader.values(); }
-
+    public int columnIndex() {
+        return this.columnIndex;
+    }
+    public String columnName(){
+        return this.columnName;
+    }
+    public SheetAHeader[] getHeader() {
+        return SheetAHeader.values();
+    }
 }
