@@ -91,6 +91,11 @@ public class ExcelUtils {
         styleOfHeader.setFillForegroundColor(IndexedColors.LIGHT_GREEN.getIndex());
         styleOfHeader.setFillPattern(CellStyle.SOLID_FOREGROUND);
 
+        // Font
+        Font HeadFont = workbook.createFont();
+        HeadFont.setBoldweight(Font.BOLDWEIGHT_BOLD);   //  폰트 굵게
+        styleOfHeader.setFont(HeadFont);
+
         /** data Header **/
         Row row = sheet.createRow(0);       // Excel Row 생성
         for (int columnNum = 0; columnNum < sheetHeader.length; columnNum++) {
@@ -99,35 +104,41 @@ public class ExcelUtils {
             cell.setCellStyle(styleOfHeader);
             cell.setCellValue(headerName);
 
+            // Column Width
+            sheet.setColumnWidth(columnNum, 20*256);
 
-            // Width Dynamic Setting
-            switch (headerName.length()) {
-                case 0:
-                case 1:
-                case 2:
-                case 3:
-                case 4:
-                    sheet.setColumnWidth(columnNum,2800);
-                    break;
-                case 5:
-                    sheet.setColumnWidth(columnNum,3200);
-                    break;
-                case 6:
-                    sheet.setColumnWidth(columnNum,4200);
-                    break;
-                case 7:
-                    sheet.setColumnWidth(columnNum,4700);
-                    break;
-                case 8:
-                    sheet.setColumnWidth(columnNum,5500);
-                    break;
-                case 9:
-                    sheet.setColumnWidth(columnNum,6200);
-                    break;
-                default:
-                    sheet.setColumnWidth(columnNum,7000);
-                    break;
-            }
+
+//            // Width Dynamic Setting
+//            switch (headerName.length()) {
+//                case 0:
+//                    sheet.autoSizeColumn(columnNum);
+//                case 1:
+//                    sheet.autoSizeColumn(columnNum);
+//                case 2:
+//                    sheet.autoSizeColumn(columnNum);
+//                case 3:
+//                case 4:
+//                    sheet.setColumnWidth(columnNum,2800);
+//                    break;
+//                case 5:
+//                    sheet.setColumnWidth(columnNum,3200);
+//                    break;
+//                case 6:
+//                    sheet.setColumnWidth(columnNum,4200);
+//                    break;
+//                case 7:
+//                    sheet.setColumnWidth(columnNum,4700);
+//                    break;
+//                case 8:
+//                    sheet.setColumnWidth(columnNum,5500);
+//                    break;
+//                case 9:
+//                    sheet.setColumnWidth(columnNum,6200);
+//                    break;
+//                default:
+//                    sheet.setColumnWidth(columnNum,7000);
+//                    break;
+//            }
         }
     }
 
@@ -164,7 +175,7 @@ public class ExcelUtils {
 
             for(int i=0; i<cellnum; i++) {
                 Cell cell2 = row.getCell(i);
-                cell2.setCellValue((RichTextString) styleOfBody);        // 스타일 적
+                cell2.setCellValue(String.valueOf(styleOfBody));        // 스타일 적용
             }
         }
 
