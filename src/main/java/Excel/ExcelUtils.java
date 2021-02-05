@@ -138,6 +138,29 @@ public class ExcelUtils {
             cell.setCellValue(test.getBookTitle());
             cell = row.createCell(cellnum++);
             cell.setCellValue(test.getReleasedDate());
+            cell = row.createCell(cellnum++);
+            cell.setCellValue(test.getCountry());
+            cell = row.createCell(cellnum++);
+            cell.setCellValue(test.getIsbn());
+            cell = row.createCell(cellnum++);
+            cell.setCellValue(test.getAuthor());
+            cell = row.createCell(cellnum++);
+            cell.setCellValue(test.getPublisher());
+            cell = row.createCell(cellnum++);
+            cell.setCellValue(test.getOriginalPrice());
+            cell = row.createCell(cellnum++);
+            cell.setCellValue(test.getDeliveryState());
+            cell = row.createCell(cellnum++);
+            cell.setCellValue(test.getDeliveryInfo());
+            cell = row.createCell(cellnum++);
+            cell.setCellValue(test.getSalePrice());
+            cell = row.createCell(cellnum++);
+            cell.setCellValue(test.getSavingPrice());
+            cell = row.createCell(cellnum++);
+            cell.setCellValue(test.getDiscountPer());
+            cell = row.createCell(cellnum++);
+            cell.setCellValue(test.getSavingPer());
+
 
             for(int i=0; i<cellnum; i++) {
                 Cell cell2 = row.getCell(i);
