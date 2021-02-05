@@ -9,6 +9,6 @@ import lombok.ToString;
 @ToString
 public class Test {
     private String bookTitle;
-    private int totalRank;
+    private double totalRank;
     private String releasedDate;
 }

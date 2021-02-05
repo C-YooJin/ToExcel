@@ -28,8 +28,8 @@ public class main {
 
         //CreateData
         ArrayList<Test> testList = createList();
-        for (Test user : testList) {
-            System.out.println(user.toString());
+        for (Test test : testList) {
+            System.out.println(test);
         }
 
         //CreateExcel
@@ -39,7 +39,7 @@ public class main {
     /* Create Data */
     public static ArrayList<Test> createList() {
         ArrayList<Test> tests = new ArrayList<>();
-        for (int i=0; i<10; i++) {
+        for (int i=1; i<11; i++) {
             Test test = new Test();
             test.setBookTitle("Onepiece "+i+"권");
             test.setReleasedDate("2021-02-25");
